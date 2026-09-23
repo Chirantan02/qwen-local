@@ -89,7 +89,7 @@ C:\ComfyUI\venv\Scripts\python.exe C:\ComfyUI\edit.py ^
 - Other flags: `--negative`, `--steps` (default 25), `--seed` (default random), `--resolution` (default 1024; `0` keeps each reference's own size), `--name` (output prefix).
 - Uses the same single-sampler CFG 1.0 recipe; wires `LoadImage → TextEncodeQwenImage21` via **dotted autogrow keys** `"images.image_1": ["10",0]`, `"images.image_2": ...` (a plain `images: [[link]]` or bare `image_1` key is silently ignored / errors — only the dotted form groups correctly), plus `vae` linked into the TE node (required for reference latents), then latent output `["4",2]` → `KSamplerAdvanced`.
 - Outputs: `C:\ComfyUI\ComfyUI\output\qwen21_edits\`.
-- Measured: **241 s** for a 1-ref watercolor edit (heavier than t2i — the vision encoder reads the reference). Warm repeats should drop.
+- Measured: **111 s** per 15-step edit on an idle machine (warm). 25-step ≈ 225s. Up to 449s when other apps eat RAM — close everything while generating. Re-identical prompt+seed = ~3s (node cache).
 
 ## 8. GitHub repo plan
 
