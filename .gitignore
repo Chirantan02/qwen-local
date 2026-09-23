@@ -1,0 +1,26 @@
+# never commit model weights (~11GB) or environment
+venv/
+models/
+downloads/
+input/
+custom_nodes/
+ComfyUI/
+ComfyUI_windows_portable/
+_src/
+portable_extract/
+
+# caches and logs
+__pycache__/
+*.pyc
+*.log
+comfyui_log.txt
+setup_log.txt
+venv_log.txt
+repair_log.txt
+
+# scratch
+prompt_submit.json
+clip.json
+unet.json
+ks.json
+template_*.json
